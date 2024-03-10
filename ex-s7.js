@@ -10,6 +10,16 @@ class Produto {
         this._preco = preco;
         this._quantidade = quantidade;
     }
+
+    get nome() {
+        return this._nome
+    }
+    get preco() {
+        return this._preco;
+    }
+    get quantidade() {
+        return this._quantidade
+    }
     //exercicio 3
     vender(quantidadeVendida) {
         if (quantidadeVendida > this._quantidade) {
@@ -33,6 +43,14 @@ class Produto {
     //exercicio 6
     atualizarPreco(novoValor) {
         this._preco = novoValor
+    }
+
+    toJSON() {
+        return {
+            nome: this._nome,
+            quantidade: this._quantidade,
+            preco: this._preco,
+        }
     }
 }
 
